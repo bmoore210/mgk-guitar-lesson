@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>Learn “my ex’s best friend” on guitar — mgk ft. blackbear</title>
+<style>
+:root{--bg:#0d0f14;--panel:#161a22;--panel2:#1d2230;--line:#2a3142;--txt:#e9edf5;--mut:#9aa5b8;--acc:#ff4f8b;--acc2:#7c5cff;--ok:#36d399;--warn:#ffb020;--c:#ff4f8b;--em:#5ab0ff;--d:#ffb020;--nc:#7d8597}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Inter,sans-serif;-webkit-text-size-adjust:100%}
+a{color:#9db8ff}button,select,input{font:inherit;color:inherit}
+select{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:.45em .6em;min-height:40px;color:var(--txt)}select option{background:#1d2230;color:#e9edf5}
+button{background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:.55em .9em;cursor:pointer;min-height:42px;transition:.12s}
+button:hover{border-color:#46506a}button.pri{background:linear-gradient(135deg,var(--acc),var(--acc2));border:0;font-weight:700}
+button.on{background:#2b2350;border-color:var(--acc2)}button:disabled{opacity:.45;cursor:default}
+header{padding:18px 18px 8px;max-width:1400px;margin:0 auto}
+h1{margin:0;font-size:clamp(22px,4vw,34px);letter-spacing:-.02em}h1 small{font-weight:500;color:var(--mut);font-size:.55em;display:block;letter-spacing:0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.chip{background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:14px}
+.chip b{color:#fff}.chip.hl{border-color:var(--acc);background:#2a1420}
+.wrap{max-width:1400px;margin:0 auto;padding:8px 14px 60px;display:grid;grid-template-columns:minmax(340px,520px) 1fr;gap:16px;align-items:start}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px}
+.card h2{font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin:0 0 10px}
+.stage{position:sticky;top:8px;display:flex;flex-direction:column;gap:12px;max-height:calc(100vh - 16px);overflow:auto}
+.tabs{display:flex;gap:6px}.tabs button{flex:1;font-weight:600}
+.srcpane{display:none;margin-top:10px}.srcpane.show{display:block}
+.drop{border:2px dashed #3a4460;border-radius:12px;padding:14px;text-align:center;color:var(--mut)}.drop.over{border-color:var(--acc);color:#fff}
+#ytbox{position:relative;width:100%;aspect-ratio:16/9;background:#000;border-radius:10px;overflow:hidden}#ytbox iframe,#ytbox>div{position:absolute;inset:0;width:100%;height:100%}
+.now{display:grid;grid-template-columns:1.35fr 1fr;gap:10px}
+.nowbox{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:10px;text-align:center;position:relative;min-height:190px}
+.nowbox .lbl{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut)}
+.bigchord{font-size:clamp(64px,11vw,104px);font-weight:800;line-height:1;margin:4px 0;letter-spacing:-.03em}
+.nextchord{font-size:clamp(40px,7vw,60px);font-weight:800;line-height:1;margin:4px 0;opacity:.85}
+.sounds{font-size:12px;color:var(--mut)}
+.count{position:absolute;top:8px;right:10px;font-weight:800;font-size:22px;color:var(--warn)}
+.mini svg{width:100%;max-width:120px;height:auto}.nowbox .mini svg{max-width:110px}
+.sec{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.sec b{font-size:18px}.sec span{color:var(--mut);font-size:14px;text-align:right}
+.cue{font-size:18px;color:#fff;min-height:1.5em;font-style:italic}
+.beats{display:grid;grid-template-columns:repeat(8,1fr);gap:4px}
+.beat{height:46px;border-radius:9px;background:#11141b;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:#c3cbe0;position:relative}
+.beat i{position:absolute;bottom:2px;font-size:10px;font-style:normal;color:#5c6680}
+.beat.hit{background:#33244f;border-color:var(--acc2);color:#fff;transform:scale(1.04)}.beat.rest{opacity:.35}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.time{font-variant-numeric:tabular-nums;color:var(--mut);min-width:96px;text-align:center}
+.seekwrap{position:relative;height:30px;margin-top:4px}.bands{position:absolute;left:0;right:0;top:0;height:8px;display:flex;border-radius:4px;overflow:hidden}
+.bands div{height:100%;border-right:1px solid #0d0f14;cursor:pointer}
+input[type=range]{width:100%;accent-color:var(--acc)}#seek{position:absolute;left:0;right:0;top:4px;margin:0}
+.ctl{display:grid;grid-template-columns:auto 1fr auto;gap:8px;align-items:center;font-size:14px}.ctl label{color:var(--mut)}
+.marking{background:#2a2410;border:1px solid var(--warn);border-radius:12px;padding:10px;display:none}.marking.show{display:block}
+#tapBig{width:100%;min-height:64px;font-size:22px;font-weight:800;background:var(--warn);color:#111;border:0}
+.chart .section{margin-bottom:16px}.chart .sh{display:flex;align-items:center;gap:10px;margin:0 0 6px;flex-wrap:wrap}
+.chart .sh h3{margin:0;font-size:17px}.chart .sh .note{color:var(--mut);font-size:13px}.chart .sh button{min-height:32px;padding:.2em .7em;font-size:13px}
+.line{display:grid;grid-template-columns:52px 1fr;gap:8px;align-items:center;padding:4px 6px;border-radius:10px}
+.line.cur{background:#1f2433}.line .t{font-size:12px;color:var(--mut);font-variant-numeric:tabular-nums}
+.cells{display:grid;grid-template-columns:2fr 1fr 1fr;gap:5px}
+.cell{border-radius:9px;padding:8px 10px;font-weight:800;font-size:20px;cursor:pointer;border:1px solid transparent;background:#12151d;display:flex;justify-content:space-between;align-items:center;min-height:44px}
+.cell small{font-weight:500;font-size:12px;color:var(--mut)}
+.cell.C{color:var(--c)}.cell.Em{color:var(--em)}.cell.D{color:var(--d)}.cell.NC{color:var(--nc)}
+.cell.on{background:#fff;color:#111 !important;box-shadow:0 0 0 3px var(--acc2)}.cell.on small{color:#333}
+.cell.done{opacity:.55}
+.cue2{grid-column:2;font-size:14px;color:#c7cfdd;font-style:italic;padding-left:2px}
+.lib{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.chord{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:8px;text-align:center;cursor:pointer;user-select:none}
+.chord:hover{border-color:var(--acc)}.chord.play{border-color:var(--ok);box-shadow:0 0 0 2px var(--ok)}
+.chord .nm{font-size:22px;font-weight:800}.chord .sub{font-size:12px;color:var(--mut)}
+.chord svg{width:100%;max-width:140px}
+.tag{display:inline-block;font-size:11px;padding:1px 7px;border-radius:999px;background:#25304a;color:#bcd;margin:2px}
+.libgroup{margin:6px 0 4px;font-weight:700;color:#cfd6e4}
+.strums{display:grid;gap:10px}
+.pat{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px;cursor:pointer}.pat.sel{border-color:var(--acc)}
+.pat .arrows{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin-top:6px;text-align:center;font-size:24px;font-weight:800}
+.pat .arrows span{background:#11141b;border-radius:8px;padding:2px 0}.pat .arrows span.x{color:#3d4559}
+.pat .cnt{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;text-align:center;font-size:12px;color:var(--mut)}
+pre.tab{background:#0a0c10;border:1px solid var(--line);border-radius:12px;padding:12px;overflow:auto;font:15px/1.35 ui-monospace,Menlo,Consolas,monospace;color:#d8e0ee}
+.tabx .hl{color:var(--acc);font-weight:700}
+ol li,ul li{margin:4px 0}.mut{color:var(--mut)}.small{font-size:13px}
+details{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin:8px 0}summary{cursor:pointer;font-weight:700}
+.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:#222a3d;border:1px solid var(--acc2);padding:10px 16px;border-radius:12px;opacity:0;transition:.25s;pointer-events:none;z-index:9;max-width:90vw}
+.toast.show{opacity:1}
+.kbd{font:12px ui-monospace,monospace;background:#0a0c10;border:1px solid var(--line);border-radius:5px;padding:1px 5px}
+@media (max-width:900px){.wrap{grid-template-columns:1fr}.stage{position:static;max-height:none}
+ body.playing .stickyNow{position:sticky;top:0;z-index:5}}
+@media (max-width:480px){.cell{font-size:17px;padding:6px 7px}.line{grid-template-columns:40px 1fr}.beat{height:38px;font-size:18px}.now{grid-template-columns:1.2fr 1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>my ex’s best friend <small>Machine Gun Kelly ft. blackbear · <i>Tickets to My Downfall</i> (2020) · interactive guitar lesson</small></h1>
+  <div class="chips">
+    <span class="chip hl">Capo <b>1st fret</b></span>
+    <span class="chip">Shapes <b>C · Em · D</b></span>
+    <span class="chip">Sounds in <b>F minor</b> (D♭ · Fm · E♭)</span>
+    <span class="chip"><b>125</b> BPM · 4/4</span>
+    <span class="chip">Just <b>3 chords</b> (you guessed 6–8 — it’s easier!)</span>
+    <span class="chip">One 2‑bar loop, 36 times</span>
+  </div>
+</header>
+
+<div class="wrap">
+<!-- ============ LEFT: STAGE ============ -->
+<div class="stage">
+  <div class="card">
+    <div class="tabs" role="tablist">
+      <button id="tab-file" class="on" data-src="file">🎵 My record</button>
+      <button id="tab-yt" data-src="yt">▶ YouTube</button>
+      <button id="tab-band" data-src="band">🥁 Play‑along</button>
+    </div>
+    <div class="srcpane show" id="pane-file">
+      <div class="drop" id="drop">
+        <b>Drop your MP3 / M4A / FLAC / WAV here</b><br>
+        <span class="small">or</span> <label><button type="button" onclick="document.getElementById('fileIn').click()">Choose file…</button></label>
+        <input type="file" id="fileIn" accept="audio/*,.mp3,.m4a,.flac,.wav,.aac,.ogg" hidden>
+        <div class="small" id="fileName" style="margin-top:6px">Album version (2:19). Your file stays on your computer.</div>
+      </div>
+      <audio id="audio" preload="auto"></audio>
+    </div>
+    <div class="srcpane" id="pane-yt">
+      <div id="ytbox"><div id="ytplayer"></div></div>
+      <div class="small mut" style="margin-top:6px">Official album audio (“mgk – Topic”, ID <span class="kbd">cHZb0Sq5KOA</span>), timed to the record. Speed and A–B loop control the embedded player too. <a href="https://www.youtube.com/watch?v=cHZb0Sq5KOA" target="_blank" rel="noopener">Open on YouTube ↗</a></div>
+    </div>
+    <div class="srcpane" id="pane-band">
+      <div class="ctl"><label>Tempo</label><input type="range" id="bpm" min="40" max="140" step="1" value="70"><b id="bpmVal">70</b></div>
+      <div class="row" style="margin-top:6px">
+        <button id="tapTempo">Tap tempo</button>
+        <label class="row small"><input type="checkbox" id="backing" checked> Backing guitar</label>
+        <label class="row small"><input type="checkbox" id="countIn" checked> 1‑bar count‑in</label>
+      </div>
+      <div class="small mut" style="margin-top:6px">No song needed: a click plus a synth guitar plays the chart. Start slow (60–70) and creep up to 125.</div>
+    </div>
+  </div>
+
+  <div class="card stickyNow">
+    <div class="sec"><b id="secName">Ready</b><span id="secNote">Press play</span></div>
+    <div class="cue" id="cue">&nbsp;</div>
+    <div class="now" style="margin-top:8px">
+      <div class="nowbox"><div class="lbl">Now</div><div class="bigchord" id="nowName">C</div><div class="sounds" id="nowSounds">sounds D♭</div><div class="mini" id="nowDia"></div></div>
+      <div class="nowbox"><div class="count" id="count"></div><div class="lbl">Next</div><div class="nextchord" id="nextName">Em</div><div class="sounds" id="nextSounds"></div><div class="mini" id="nextDia"></div></div>
+    </div>
+    <div class="beats" id="beats" style="margin-top:10px"></div>
+    <div class="small mut" style="margin-top:4px">Arrows = current strum pattern (<span id="patName">Record feel</span>). Change it under “Strumming”.</div>
+    <div class="row" style="margin-top:10px">
+      <button class="pri" id="play" style="min-width:110px">▶ Play</button>
+      <button id="back">⟲ 5s</button><button id="fwd">5s ⟳</button>
+      <span class="time" id="time">0:00 / 2:19</span>
+    </div>
+    <div class="seekwrap"><div class="bands" id="bands"></div><input type="range" id="seek" min="0" max="139" step="0.01" value="0"></div>
+  </div>
+
+  <div class="card">
+    <h2>Practice controls</h2>
+    <div class="ctl"><label>Speed</label>
+      <select id="speed"><option value="0.5">0.5×</option><option value="0.6">0.6×</option><option value="0.75">0.75×</option><option value="0.85">0.85×</option><option value="0.9">0.9×</option><option value="1" selected>1× (record)</option></select><span class="small mut" id="speedNote">file &amp; YouTube</span></div>
+    <div class="row" style="margin-top:8px">
+      <button id="setA">Set A</button><button id="setB">Set B</button><button id="clrAB">Clear loop</button>
+      <span class="small mut" id="abInfo">Loop: off</span>
+    </div>
+    <div class="ctl" style="margin-top:10px"><label>Sync offset</label><input type="range" id="offset" min="-2" max="2" step="0.01" value="0"><b id="offVal">+0.00s</b></div>
+    <div class="row" style="margin-top:6px">
+      <button id="calib" title="While the song plays, tap exactly when you hear a chord change">🎯 Tap on a chord change</button>
+      <button id="offReset">Reset offset</button>
+      <label class="row small"><input type="checkbox" id="click"> Click track</label>
+    </div>
+    <div class="row" style="margin-top:6px">
+      <button id="markBtn">✏️ Fix timings (mark mode)</button><button id="markReset">Reset to default timings</button>
+    </div>
+    <div class="marking" id="marking" style="margin-top:8px">
+      <div class="small" style="margin-bottom:6px"><b>Mark mode.</b> Play the song and tap <span class="kbd">Space</span>/<span class="kbd">M</span> or the button <b>exactly when the chord changes</b>. Each tap snaps the nearest chord change to your tap; later changes shift with it. Saved automatically in this browser.</div>
+      <label class="row small" style="margin-bottom:6px"><input type="checkbox" id="shiftLater" checked> Shift all later changes too</label>
+      <button id="tapBig">TAP = CHORD CHANGE</button>
+      <div class="small mut" id="markInfo" style="margin-top:6px"></div>
+    </div>
+    <div class="small mut" style="margin-top:8px">Keys: <span class="kbd">Space</span> play/pause · <span class="kbd">←</span>/<span class="kbd">→</span> 5 s · <span class="kbd">A</span>/<span class="kbd">B</span> loop points · <span class="kbd">M</span> mark change (mark mode) · click any chord in the chart to jump there.</div>
+  </div>
+</div>
+
+<!-- ============ RIGHT ============ -->
+<div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+  <div class="card">
+    <h2>The whole song in one loop</h2>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+      <div class="cells" style="flex:1;min-width:260px">
+        <div class="cell C" style="cursor:default">C <small>bar 1 · 4 beats</small></div>
+        <div class="cell Em" style="cursor:default">Em <small>2</small></div>
+        <div class="cell D" style="cursor:default">D <small>2</small></div>
+      </div>
+      <div class="small mut" style="flex:1;min-width:220px">Every section — intro, verses, pre‑choruses, choruses, outro — is this same loop: <b>C</b> for a full bar, then <b>Em</b> and <b>D</b> for half a bar each. Only two moments differ: a 2‑beat <b>stop</b> at 0:30 and the song <b>ending on Em</b>.</div>
+    </div>
+  </div>
+
+  <div class="card chart" id="chartCard">
+    <h2>Chord chart <span class="mut" style="text-transform:none;letter-spacing:0">— lyric cues only · click a chord to jump</span></h2>
+    <div id="chart"></div>
+  </div>
+
+  <div class="card">
+    <h2>Chord library <span class="mut" style="text-transform:none;letter-spacing:0">— tap to hear it strummed</span></h2>
+    <label class="row small" style="margin-bottom:8px"><input type="checkbox" id="capoSound" checked> Play with capo 1 (matches the record)</label>
+    <div id="lib"></div>
+  </div>
+
+  <div class="card">
+    <h2>Strumming</h2>
+    <div class="strums" id="strums"></div>
+    <div class="small mut" style="margin-top:8px">The record’s guitars chug steady <b>eighth notes</b> (8 per bar) — the top‑rated Ultimate Guitar tab and GuitarTwitt both show straight 8ths. If that’s too fast, the “4 downs” pattern still sounds right.</div>
+  </div>
+
+  <div class="card">
+    <h2>Tab: the main riff (power chords, no capo)</h2>
+    <p class="small mut" style="margin-top:0">Want the electric sound from the record? Skip the capo and play two‑note power chords on the A and D strings, palm‑muted, all downstrokes. Same rhythm as the chart: 8 hits, 4 hits, 4 hits. (Per the Ultimate Guitar tab, 4.8★.)</p>
+<pre class="tab">        D♭5 (=C shape)          F5 (=Em)      E♭5 (=D)
+e|------------------------|---------------|---------------|
+B|------------------------|---------------|---------------|
+G|------------------------|---------------|---------------|
+D|--6--6--6--6--6--6--6--6-|-10-10-10-10---|--8--8--8--8---|
+A|--4--4--4--4--4--4--4--4-|--8--8--8--8---|--6--6--6--6---|
+E|------------------------|---------------|---------------|
+   1  &  2  &  3  &  4  &    1  &  2  &      3  &  4  &
+   ↓  ↓  ↓  ↓  ↓  ↓  ↓  ↓    ↓  ↓  ↓  ↓      ↓  ↓  ↓  ↓</pre>
+    <p class="small mut">How to read it: each line is a string (top line = thinnest). Numbers = which fret. Index finger on the A‑string note, ring finger two frets higher on the D string. Slide the same shape: fret 4 → 8 → 6.</p>
+  </div>
+
+  <div class="card">
+    <h2>How to practice this</h2>
+    <ol>
+      <li><b>Capo on fret 1.</b> All the diagrams count frets from the capo, so “C” is your normal open C.</li>
+      <li><b>Learn Em first</b> (2 fingers, easiest), then <b>C</b>, then <b>D</b>. Tap each in the library to hear what it should sound like.</li>
+      <li><b>Drill the changes, hardest first</b> — 1 minute each, count how many clean switches you get:
+        <ul>
+          <li><b>D → C</b> (hardest: every finger moves; it happens 35 times). Trick: move your ring finger to the A string first — it’s the bass note you strum first.</li>
+          <li><b>Em → D</b> (quick: Em only lasts 2 beats). Lift early on the last “&amp;” — a bit of open‑string noise is invisible under the band.</li>
+          <li><b>C → Em</b> (easiest): lift your index finger, middle and ring each drop one string.</li>
+        </ul></li>
+      <li><b>Play‑along mode at 60–70 BPM</b> with the “4 downs” strum. When you can do 4 loops without stopping, go 8 downs, then raise the tempo 10 BPM at a time.</li>
+      <li><b>Your record at 0.75×</b>, then 0.85×, then 1×. Use A–B loop on the chorus (0:47–1:02) until it’s automatic.</li>
+      <li><b>Watch for the two surprises:</b> the 2‑beat stop at 0:30 (“N.C.” — mute the strings with your palm) and the last chord, which is Em, not D.</li>
+      <li>Too hard right now? Use the <b>easy shapes</b> (Cmaj7, one‑finger Em, Dsus2) in the library — they sound fine in this song.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h2>Sources &amp; accuracy</h2>
+    <ul class="small">
+      <li><b>Chords:</b> Ultimate Guitar’s top‑rated chords (4.9★, 280 votes): capo 1, C · Em · D throughout. Same at GuvnaGuitars, TabFan, GuitarTwitt, and Chordier (3 chords, 3 transitions). Hooktheory puts every section in F minor, which C · Em · D become with capo 1 (D♭ · Fm · E♭). I checked the album audio’s harmony against this, and it matches. <b>The sources don’t disagree on the chords.</b></li>
+      <li><b>Key/tempo:</b> F minor at 124.9–125 BPM (Hooktheory, SongBPM, Which Key &amp; BPM), confirmed by a beat analysis of the album audio (124.9 BPM, 288 beats = 36 two‑bar loops).</li>
+      <li><b>Sections:</b> UG and Genius call it Intro / Verse / Chorus / Verse / Chorus / Outro. The “pre‑chorus” labels here mark the second half of each verse (“Now we’re in the backseat…”, “But now… done changed”) and use the same chords.</li>
+      <li><b>Sync times</b> are an <b>estimate</b> built from that beat grid and synced‑lyric timestamps (about ±0.1 s). If your copy starts a bit earlier or later, nudge <i>Sync offset</i> or use 🎯 / mark mode.</li>
+      <li>No full lyrics are included, only short cues. Your audio file never leaves your computer.</li>
+    </ul>
+  </div>
+</div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+/* ================= DATA ================= */
+const BEATS=[0.557,1.022,1.509,1.974,2.461,2.949,3.413,3.878,4.365,4.853,5.317,5.805,6.293,6.780,7.268,7.755,8.220,8.707,9.172,9.660,10.124,10.612,11.076,11.540,12.051,12.539,13.026,13.514,14.002,14.536,15.070,15.581,16.115,16.602,17.090,17.578,18.065,18.530,19.017,19.482,19.969,20.457,20.944,21.409,21.896,22.361,22.825,23.336,23.824,24.288,24.752,25.240,25.728,26.215,26.703,27.167,27.655,28.143,28.607,29.095,29.582,30.047,30.534,31.022,31.486,31.974,32.438,32.903,33.367,33.878,34.389,34.853,35.341,35.828,36.293,36.780,37.245,37.732,38.220,38.684,39.149,39.636,40.124,40.612,41.099,41.564,42.005,42.516,43.003,43.491,43.979,44.443,44.931,45.418,45.883,46.370,46.858,47.322,47.810,48.274,48.762,49.250,49.737,50.202,50.689,51.177,51.664,52.129,52.616,53.081,53.568,54.056,54.544,55.008,55.496,55.960,56.448,56.935,57.423,57.887,58.352,58.839,59.327,59.815,60.279,60.767,61.254,61.742,62.206,62.694,63.158,63.646,64.134,64.621,65.086,65.550,66.014,66.525,67.013,67.477,67.965,68.452,68.986,69.428,69.892,70.380,70.844,71.332,71.819,72.284,72.771,73.189,73.630,74.141,74.675,75.140,75.604,76.138,76.626,77.090,77.578,78.065,78.530,79.018,79.505,79.970,80.457,80.922,81.386,81.897,82.384,82.849,83.336,83.824,84.288,84.799,85.264,85.728,86.216,86.680,87.168,87.655,88.143,88.607,89.095,89.583,90.047,90.558,91.022,91.487,91.951,92.439,92.926,93.414,93.901,94.366,94.854,95.318,95.806,96.293,96.781,97.245,97.733,98.220,98.685,99.172,99.660,100.124,100.612,101.100,101.587,102.052,102.539,103.004,103.491,103.979,104.443,104.931,105.419,105.883,106.371,106.858,107.323,107.810,108.298,108.785,109.273,109.738,110.225,110.690,111.177,111.642,112.129,112.617,113.104,113.569,114.056,114.521,115.008,115.496,115.984,116.448,116.936,117.400,117.888,118.375,118.863,119.327,119.815,120.303,120.767,121.255,121.742,122.207,122.694,123.159,123.646,124.111,124.598,125.086,125.574,126.038,126.526,126.990,127.501,127.965,128.453,128.917,129.405,129.892,130.380,130.868,131.332,131.796,132.284,132.772,133.259,133.724,134.211,134.699,135.187,135.651,136.139,136.603,137.091,137.555,138.043,138.530];               // beat times (s) of the album audio, 124.9 BPM
+const BEAT_LEN=0.48047, DUR=138.97;
+const CHORDS={
+  C:{name:'C',sounds:'D♭',frets:[null,3,2,0,1,0],fingers:[0,3,2,0,1,0],group:'song'},
+  Em:{name:'Em',sounds:'Fm',frets:[0,2,2,0,0,0],fingers:[0,2,3,0,0,0],group:'song'},
+  D:{name:'D',sounds:'E♭',frets:[null,null,0,2,3,2],fingers:[0,0,0,1,3,2],group:'song'},
+  Cmaj7:{name:'Cmaj7',sounds:'easy C',frets:[null,3,2,0,0,0],fingers:[0,3,2,0,0,0],group:'easy',note:'Leave off your index finger'},
+  Cmini:{name:'C (mini)',sounds:'1 finger',frets:[null,null,null,0,1,0],fingers:[0,0,0,0,1,0],group:'easy',note:'Strum only the top 3 strings'},
+  Em1:{name:'Em (1 finger)',sounds:'easy Em',frets:[null,null,2,0,0,0],fingers:[0,0,2,0,0,0],group:'easy',note:'Strum top 4 strings'},
+  Dsus2:{name:'Dsus2',sounds:'easy D',frets:[null,null,0,2,3,0],fingers:[0,0,0,1,3,0],group:'easy',note:'2 fingers, open high E'},
+  Db5:{name:'D♭5',sounds:'no capo · =C',frets:[null,4,6,null,null,null],fingers:[0,1,3,0,0,0],group:'power',nocapo:true},
+  F5:{name:'F5',sounds:'no capo · =Em',frets:[null,8,10,null,null,null],fingers:[0,1,3,0,0,0],group:'power',nocapo:true},
+  Eb5:{name:'E♭5',sounds:'no capo · =D',frets:[null,6,8,null,null,null],fingers:[0,1,3,0,0,0],group:'power',nocapo:true},
+  Db:{name:'D♭',sounds:'no capo · barre',frets:[null,4,6,6,6,4],fingers:[0,1,3,3,3,1],barre:4,group:'real',nocapo:true},
+  Fm:{name:'Fm',sounds:'no capo · barre',frets:[1,3,3,1,1,1],fingers:[1,3,4,1,1,1],barre:1,group:'real',nocapo:true},
+  Eb:{name:'E♭',sounds:'no capo · barre',frets:[null,6,8,8,8,6],fingers:[0,1,3,3,3,1],barre:6,group:'real',nocapo:true}
+};
+const SECTIONS=[
+  {name:'Intro',a:0,b:3,note:'MGK & blackbear',col:'#6b5cff'},
+  {name:'Verse 1',a:4,b:7,note:'MGK',col:'#3a86ff'},
+  {name:'Pre‑chorus',a:8,b:11,note:'starts with a 2‑beat stop',col:'#00a6a6'},
+  {name:'Chorus',a:12,b:15,note:'',col:'#ff4f8b'},
+  {name:'Verse 2',a:16,b:19,note:'blackbear',col:'#3a86ff'},
+  {name:'Pre‑chorus 2',a:20,b:23,note:'',col:'#00a6a6'},
+  {name:'Chorus ×2',a:24,b:31,note:'',col:'#ff4f8b'},
+  {name:'Outro',a:32,b:35,note:'like the intro · ends on Em',col:'#6b5cff'}
+];
+const CUES=["Ayy… “You know my ex…”","“(It all seems complicated)”","“I read those texts…”","“(I'll never say—)”",
+"“You walked in my life…”","“'Cause my boy's new girl…”","“Act like you don't see me…”","“Your eyes already told me…”",
+"“Now we're in the backseat…”","“…is it wrong if I…”","“…drunk on the elevator”","“…first time in New York City”",
+"“I swear to God…”","“Then you showed up…”","“I swear to God…”","“I never fall in love…”",
+"“First off, I'm not sorry…”","“You play like I'm invisible…”","“Last year was a mess…”","“But the past still…”",
+"“But now… done changed”","“Go our separate ways”","“Look at this damage…”","“Please, don't say nothing…”",
+"“I swear to God…”","“Then you showed up…”","“I swear to God…”","“I never fall in love…”",
+"“I swear to God…”","“Then you showed up…”","“I swear to God…”","“I never fall in love…”",
+"“You know my ex…”","“(It all seems complicated)”","“I read those texts…”","“(I'll never say—)”"];
+// Events: each 2-bar loop k = C (beat 8k, 4 beats) · Em (8k+4, 2) · D (8k+6, 2)
+const EVENTS=[];
+for(let k=0;k<36;k++){
+  EVENTS.push({b:8*k,ch:'C',loop:k,len:4});
+  EVENTS.push({b:8*k+4,ch:'Em',loop:k,len:2});
+  if(k===7) EVENTS.push({b:8*k+6,ch:'NC',loop:k,len:2});
+  else if(k===35){EVENTS[EVENTS.length-1].len=4;EVENTS[EVENTS.length-1].end=true;}
+  else EVENTS.push({b:8*k+6,ch:'D',loop:k,len:2});
+}
+EVENTS.forEach((e,i)=>e.i=i);
+const TOTAL_BEATS=288;
+const PATTERNS=[
+  {id:'rec',name:'Record feel — 8 downs',arr:['↓','↓','↓','↓','↓','↓','↓','↓'],desc:'Straight eighths, all downstrokes, like the record. Palm‑mute lightly for punch.'},
+  {id:'four',name:'Beginner — 4 downs',arr:['↓','','↓','','↓','','↓',''],desc:'One strum per beat. Gives you time to change chords.'},
+  {id:'camp',name:'Campfire — D · DU · UDU',arr:['↓','','↓','↑','','↑','↓','↑'],desc:'Acoustic pattern (as listed by Chordier). Keep your hand moving even on the gaps.'}
+];
+
+/* ================= STATE ================= */
+const LS='mebf-guitar-v1';
+let saved={};try{saved=JSON.parse(localStorage.getItem(LS)||'{}')}catch(e){}
+const S={src:'file',playing:false,offset:saved.offset||0,custom:saved.custom||{},pattern:saved.pattern||'rec',
+  A:null,B:null,mark:false,bpm:saved.bpm||70,click:false,speed:1,curEv:-1,lastBeatInt:-99,lastEighth:-99,
+  band:{t0:0,beat0:0,running:false,next8:0}};
+function persist(){localStorage.setItem(LS,JSON.stringify({offset:S.offset,custom:S.custom,pattern:S.pattern,bpm:S.bpm}))}
+
+/* ================= TIME MAP ================= */
+function beatTime(b){ // album seconds for (fractional) beat
+  if(b<=0) return BEATS[0]+b*BEAT_LEN;
+  const n=BEATS.length; if(b>=n-1) return BEATS[n-1]+(b-(n-1))*BEAT_LEN;
+  const i=Math.floor(b),f=b-i; return BEATS[i]+(BEATS[i+1]-BEATS[i])*f;
+}
+function timeBeat(t){
+  const n=BEATS.length; if(t<=BEATS[0]) return (t-BEATS[0])/BEAT_LEN; if(t>=BEATS[n-1]) return n-1+(t-BEATS[n-1])/BEAT_LEN;
+  let lo=0,hi=n-1;while(hi-lo>1){const m=(lo+hi)>>1;if(BEATS[m]<=t)lo=m;else hi=m}
+  return lo+(t-BEATS[lo])/(BEATS[lo+1]-BEATS[lo]);
+}
+function evTime(i){ if(i>=EVENTS.length) return DUR; return (S.custom[i]!=null&&S.src!=='band')?S.custom[i]:beatTime(EVENTS[i].b) } // album time
+// Current position expressed in song-time (album seconds) and beats
+function songTime(){
+  if(S.src==='band'){ return beatTime(bandBeat()) }
+  return srcTime()-S.offset;
+}
+function songBeat(){ if(S.src==='band') return bandBeat(); return timeBeat(songTime()) }
+
+/* ================= AUDIO SOURCES ================= */
+const audio=document.getElementById('audio');
+let fileLoaded=false;
+function srcTime(){ if(S.src==='file') return audio.currentTime||0; if(S.src==='yt') return ytTime(); return 0 }
+function srcDur(){ if(S.src==='file') return (isFinite(audio.duration)&&audio.duration)||DUR; if(S.src==='yt'&&!FILEMODE&&yt&&yt.getDuration) return yt.getDuration()||DUR; if(S.src==='yt') return DUR; return beatTime(TOTAL_BEATS) }
+function seekTo(t){ // t = source time
+  t=Math.max(0,Math.min(t,srcDur()-0.05));
+  if(S.src==='file'){audio.currentTime=t}
+  else if(S.src==='yt'){ if(FILEMODE){ MC.base=t; MC.t0=performance.now() } else if(yt&&yt.seekTo){yt.seekTo(t,true);ytLast={t:t,p:performance.now()}} }
+  else { bandSeekBeat(timeBeat(t)) }
+  S.curEv=-1; S.lastBeatInt=-99; S.lastEighth=-99;
+}
+function seekSong(t){ if(S.src==='band') bandSeekBeat(timeBeat(t)); else seekTo(t+S.offset) }
+function play(){ ensureCtx();
+  if(S.src==='file'){ if(!fileLoaded){toast('Pick your audio file first (or use YouTube / Play‑along)');return} audio.play() }
+  else if(S.src==='yt'){ if(FILEMODE){ MC.t0=performance.now(); MC.running=true; setPlaying(true) } else if(yt&&yt.playVideo) yt.playVideo(); else toast('YouTube player is still loading…') }
+  else bandStart();
+}
+function pause(){ if(S.src==='file') audio.pause(); else if(S.src==='yt'){ if(FILEMODE){ MC.base=mcTime(); MC.running=false; setPlaying(false) } else if(yt&&yt.pauseVideo) yt.pauseVideo() } else bandStop() }
+function setupManualYT(){ if(document.getElementById('mcbox')) return;
+  document.getElementById('ytbox').outerHTML=`<div id="mcbox" class="drop" style="text-align:left">
+   <b>YouTube can’t be embedded when this page is opened straight from disk.</b> Two‑tab sync instead:
+   <ol class="small" style="margin:6px 0 8px;padding-left:20px"><li>Click <b>Open song on YouTube</b> (new tab) and pause it at 0:00.</li>
+   <li>Press play on YouTube and, at the same moment, <b>▶ Play</b> here.</li>
+   <li>While it plays, hit <b>🎯 Tap on a chord change</b> right on a change to lock the sync.</li></ol>
+   <a href="https://www.youtube.com/watch?v=${YT_ID}" target="_blank" rel="noopener"><button type="button" class="pri">Open song on YouTube ↗</button></a>
+   <div class="small mut" style="margin-top:6px">Embedded, auto‑synced YouTube works when the page is served from a web address (e.g. the hosted link, or <span class="kbd">python3 -m http.server</span> in this folder).</div></div>`; }
+function setPlaying(p){ S.playing=p; document.getElementById('play').textContent=p?'❚❚ Pause':'▶ Play'; document.body.classList.toggle('playing',p) }
+audio.addEventListener('play',()=>setPlaying(true));audio.addEventListener('pause',()=>setPlaying(false));audio.addEventListener('ended',()=>setPlaying(false));
+audio.addEventListener('loadedmetadata',()=>{fileLoaded=true;updateSeekMax();audio.playbackRate=S.speed;if('preservesPitch' in audio)audio.preservesPitch=true});
+function loadFile(f){ if(!f) return; const url=URL.createObjectURL(f); audio.src=url; audio.load();
+  document.getElementById('fileName').textContent='Loaded: '+f.name; toast('Loaded '+f.name+' — press Play'); }
+document.getElementById('fileIn').addEventListener('change',e=>loadFile(e.target.files[0]));
+const drop=document.getElementById('drop');
+['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('over')}));
+['dragleave','drop'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.remove('over')}));
+drop.addEventListener('drop',e=>{const f=e.dataTransfer.files[0];if(f)loadFile(f)});
+window.addEventListener('dragover',e=>e.preventDefault());window.addEventListener('drop',e=>{e.preventDefault();const f=e.dataTransfer&&e.dataTransfer.files[0];if(f){switchSrc('file');loadFile(f)}});
+
+/* ---- YouTube ---- */
+const YT_ID='cHZb0Sq5KOA'; const FILEMODE=location.protocol==='file:';
+const MC={running:false,base:0,t0:0}; // manual clock used when YouTube can't embed (file://)
+function mcTime(){ return MC.running? MC.base+(performance.now()-MC.t0)/1000 : MC.base }
+let yt=null,ytReady=false,ytLast={t:0,p:0},ytLoading=false,ytState=-1;
+function loadYT(){ if(FILEMODE){ setupManualYT(); return } if(ytLoading) return; ytLoading=true; const s=document.createElement('script'); s.src='https://www.youtube.com/iframe_api'; s.onerror=()=>toast('Could not load YouTube (offline?)'); document.head.appendChild(s) }
+window.onYouTubeIframeAPIReady=function(){
+  const pv={playsinline:1,rel:0,modestbranding:1};
+  if(location.protocol.startsWith('http')) pv.origin=location.origin;
+  yt=new YT.Player('ytplayer',{videoId:YT_ID,playerVars:pv,events:{
+    onReady:()=>{ytReady=true;updateSeekMax();try{yt.setPlaybackRate(S.speed)}catch(e){}},
+    onStateChange:e=>{ytState=e.data;ytLast={t:yt.getCurrentTime(),p:performance.now()};if(S.src==='yt')setPlaying(e.data===1)},
+    onError:e=>toast('YouTube error '+e.data+' — try “My record”, or open this page from a web server')}});
+};
+function ytTime(){ if(FILEMODE) return mcTime(); if(!yt||!yt.getCurrentTime) return 0; const t=yt.getCurrentTime(),p=performance.now();
+  if(ytState!==1){ytLast={t,p};return t}
+  if(Math.abs(t-ytLast.t)>0.001){ytLast={t,p};return t}
+  const r=(yt.getPlaybackRate&&yt.getPlaybackRate())||1; return ytLast.t+Math.min(0.6,(p-ytLast.p)/1000*r) }
+
+/* ---- Play-along (internal clock) ---- */
+function bandBeat(){ const B=S.band; if(!B.running) return B.beat0; return B.beat0+(ctx.currentTime-B.t0)*S.bpm/60 }
+function bandSeekBeat(b){ const B=S.band; const was=B.running; B.beat0=Math.max(-4,b); B.t0=ctx?ctx.currentTime:0; B.next8=Math.ceil(B.beat0*2); }
+function bandStart(){ const B=S.band; ensureCtx(); let b=B.beat0; if(document.getElementById('countIn').checked){ const bar=Math.floor((b+0.001)/4)*4; b=bar-4 }
+  if(b>=TOTAL_BEATS-0.5) b=-4; B.beat0=b; B.t0=ctx.currentTime+0.05; B.next8=Math.ceil(b*2); B.running=true; setPlaying(true) }
+function bandStop(){ const B=S.band; if(!B.running) return; B.beat0=bandBeat(); B.running=false; setPlaying(false) }
+function bandScheduler(){ const B=S.band; if(!B.running||!ctx) return;
+  const ahead=ctx.currentTime+0.12;
+  while(true){ const e8=B.next8; const tb=e8/2; const when=B.t0+(tb-B.beat0)*60/S.bpm; if(when>ahead) break;
+    if(when>=ctx.currentTime-0.02){
+      if(e8%2===0){ const bi=tb; if(bi<0||document.getElementById('click').checked) clickAt(when,((bi%4)+4)%4===0) }
+      if(tb>=0 && document.getElementById('backing').checked){ const pat=PATTERNS.find(p=>p.id===S.pattern); const slot=((e8%8)+8)%8; const stroke=pat.arr[slot];
+        const ev=eventAtBeat(tb); if(stroke&&ev&&ev.ch!=='NC'&&tb<TOTAL_BEATS) strum(ev.ch,stroke==='↑'?'up':'down',when,slot%2?0.5:0.75,true) }
+    }
+    B.next8++;
+    if(tb>=TOTAL_BEATS){ handleBandEnd(); break }
+  }
+  // A-B loop in band mode
+  if(S.A!=null&&S.B!=null){ const sb=bandBeat(); const bA=timeBeat(S.A),bB=timeBeat(S.B); if(sb>=bB){ B.beat0=bA; B.t0=ctx.currentTime; B.next8=Math.ceil(bA*2) } }
+}
+function handleBandEnd(){ setTimeout(()=>{bandStop();S.band.beat0=0},400) }
+function eventAtBeat(b){ let lo=0,hi=EVENTS.length-1,r=-1; while(lo<=hi){const m=(lo+hi)>>1; if(EVENTS[m].b<=b+1e-6){r=m;lo=m+1}else hi=m-1} return r<0?null:EVENTS[r] }
+
+/* ================= SYNTH (Web Audio Karplus-Strong) ================= */
+let ctx=null,master=null; const bufCache={};
+function ensureCtx(){ if(!ctx){ ctx=new (window.AudioContext||window.webkitAudioContext)(); master=ctx.createGain(); master.gain.value=0.8;
+  const comp=ctx.createDynamicsCompressor(); master.connect(comp); comp.connect(ctx.destination);} if(ctx.state==='suspended') ctx.resume(); return ctx }
+function ksBuffer(midi){ if(bufCache[midi]) return bufCache[midi];
+  const sr=ctx.sampleRate,f=440*Math.pow(2,(midi-69)/12),N=Math.max(2,Math.round(sr/f)),len=Math.floor(sr*2.2);
+  const buf=ctx.createBuffer(1,len,sr),d=buf.getChannelData(0); const decay=0.996-Math.max(0,(midi-40))*0.00004;
+  for(let i=0;i<N;i++) d[i]=(Math.random()*2-1)*0.9;
+  let prev=0; for(let i=0;i<N;i++){ d[i]=0.6*d[i]+0.4*prev; prev=d[i] } // soften attack
+  for(let i=N;i<len;i++) d[i]=decay*0.5*(d[i-N]+d[i-N+1<i?i-N+1:i-N]);
+  return bufCache[midi]=buf }
+const OPEN=[40,45,50,55,59,64];
+function chordMidis(key,capo){ const c=CHORDS[key]; return c.frets.map((f,s)=>f==null?null:OPEN[s]+f+capo) }
+function strum(key,dir='down',when,vel=0.8,soft){ ensureCtx(); if(!CHORDS[key]) return; when=when||ctx.currentTime+0.01;
+  const c=CHORDS[key]; const capo=(c.nocapo||!document.getElementById('capoSound').checked)?0:1;
+  const notes=chordMidis(key,capo).map((m,s)=>({m,s})).filter(x=>x.m!=null); if(dir==='up') notes.reverse();
+  const out=ctx.createGain(); out.gain.value=(soft?0.32:0.5)*vel; const lp=ctx.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=soft?2600:3800; out.connect(lp); lp.connect(master);
+  notes.forEach((n,i)=>{ const src=ctx.createBufferSource(); src.buffer=ksBuffer(n.m); const g=ctx.createGain(); const t=when+i*(dir==='up'?0.009:0.014);
+    g.gain.setValueAtTime(dir==='up'&&i>3?0.5:1,t); g.gain.setTargetAtTime(0.0001,t+(soft?0.32:1.4),soft?0.06:0.35);
+    src.connect(g); g.connect(out); src.start(t); src.stop(t+2.2) });
+}
+function clickAt(when,accent){ ensureCtx(); const o=ctx.createOscillator(),g=ctx.createGain(); o.frequency.value=accent?1600:1100; g.gain.setValueAtTime(0.0001,when); g.gain.exponentialRampToValueAtTime(accent?0.5:0.3,when+0.002); g.gain.exponentialRampToValueAtTime(0.0001,when+0.05); o.connect(g); g.connect(master); o.start(when); o.stop(when+0.06) }
+
+/* ================= SVG CHORD DIAGRAMS ================= */
+function diagram(key,opts={}){ const c=CHORDS[key]; if(!c) return '<svg viewBox="0 0 120 140"></svg>';
+  const fr=c.frets.filter(f=>f!=null&&f>0); const maxF=Math.max(0,...fr),minF=Math.min(99,...fr);
+  const base=(maxF>4)?minF:1; const W=120,H=146,x0=22,y0=30,sw=(W-2*x0+8)/5,fh=24,nf=4;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${c.name} chord diagram">`;
+  if(base===1) s+=`<rect x="${x0-1}" y="${y0-5}" width="${sw*5+2}" height="5" rx="2" fill="#e9edf5"/>`;
+  else s+=`<text x="${x0-6}" y="${y0+fh*0.65}" font-size="12" fill="#9aa5b8" text-anchor="end">${base}fr</text>`;
+  for(let i=0;i<=nf;i++) s+=`<line x1="${x0}" x2="${x0+sw*5}" y1="${y0+i*fh}" y2="${y0+i*fh}" stroke="#5c6680" stroke-width="1.4"/>`;
+  for(let i=0;i<6;i++) s+=`<line x1="${x0+i*sw}" x2="${x0+i*sw}" y1="${y0}" y2="${y0+nf*fh}" stroke="#8a94a8" stroke-width="${1+ (5-i)*0.25}"/>`;
+  if(c.barre){ const strs=c.frets.map((f,i)=>f===c.barre?i:-1).filter(i=>i>=0); const a=Math.min(...strs),b=Math.max(...strs); const y=y0+(c.barre-base+0.5)*fh;
+    s+=`<rect x="${x0+a*sw-8}" y="${y-8}" width="${(b-a)*sw+16}" height="16" rx="8" fill="#ff4f8b"/>`; }
+  c.frets.forEach((f,i)=>{ const x=x0+i*sw;
+    if(f==null) s+=`<text x="${x}" y="${y0-10}" font-size="13" fill="#ff6b6b" text-anchor="middle" font-weight="700">×</text>`;
+    else if(f===0) s+=`<circle cx="${x}" cy="${y0-14}" r="5" fill="none" stroke="#36d399" stroke-width="2"/>`;
+    else if(!(c.barre&&f===c.barre&&c.fingers[i]===1)){ const y=y0+(f-base+0.5)*fh; s+=`<circle cx="${x}" cy="${y}" r="9.5" fill="#ff4f8b"/>`+
+      (c.fingers[i]?`<text x="${x}" y="${y+4.5}" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="800">${c.fingers[i]}</text>`:''); }
+    else { const y=y0+(f-base+0.5)*fh; if(i===c.frets.findIndex(v=>v===c.barre)) s+=`<text x="${x}" y="${y+4.5}" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="800">1</text>` }
+  });
+  ['E','A','D','G','B','e'].forEach((n,i)=>s+=`<text x="${x0+i*sw}" y="${y0+nf*fh+16}" font-size="10" fill="#6c7891" text-anchor="middle">${n}</text>`);
+  return s+'</svg>' }
+
+/* ================= RENDER ================= */
+const $=id=>document.getElementById(id);
+function fmt(t){ t=Math.max(0,t); return Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0') }
+function chName(ch){ return ch==='NC'?'N.C.':ch }
+function renderChart(){ let h='';
+  SECTIONS.forEach((sec,si)=>{ h+=`<div class="section"><div class="sh"><span style="width:10px;height:10px;border-radius:3px;background:${sec.col};display:inline-block"></span><h3>${sec.name}</h3><span class="note">${fmt(evTime(EVENTS.findIndex(e=>e.loop===sec.a)))}${sec.note?' · '+sec.note:''}</span>
+      <button data-play="${si}">▶ from here</button><button data-loop="${si}">🔁 loop</button></div>`;
+    for(let k=sec.a;k<=sec.b;k++){ const evs=EVENTS.filter(e=>e.loop===k); const t=evTime(evs[0].i);
+      h+=`<div class="line" id="line${k}"><span class="t">${fmt(t)}</span><div class="cells" style="${evs.length===2?'grid-template-columns:2fr 2fr':''}">`+
+        evs.map(e=>`<div class="cell ${e.ch}" id="cell${e.i}" data-ev="${e.i}">${chName(e.ch)}<small>${e.len} beats${e.end?' · end':''}</small></div>`).join('')+
+        `</div><div class="cue2">${CUES[k]}</div></div>` }
+    h+='</div>' });
+  $('chart').innerHTML=h;
+  $('chart').onclick=e=>{ const c=e.target.closest('[data-ev]'); if(c){ const i=+c.dataset.ev; seekSong(evTime(i)-0.05); if(!S.playing){strum(EVENTS[i].ch==='NC'?'C':EVENTS[i].ch)} renderNow(true); return }
+    const p=e.target.closest('[data-play]'); if(p){ const sec=SECTIONS[+p.dataset.play]; seekSong(evTime(EVENTS.findIndex(x=>x.loop===sec.a))-0.3); play(); return }
+    const l=e.target.closest('[data-loop]'); if(l){ const sec=SECTIONS[+l.dataset.loop]; const a=EVENTS.findIndex(x=>x.loop===sec.a), bIdx=EVENTS.findIndex(x=>x.loop===sec.b+1);
+      setAB(evTime(a)-0.05,bIdx<0?DUR:evTime(bIdx)-0.02); seekSong(S.A); play(); toast('Looping '+sec.name) } };
+}
+function renderBands(){ const tot=DUR; $('bands').innerHTML=SECTIONS.map(sec=>{ const a=evTime(EVENTS.findIndex(e=>e.loop===sec.a)); const bi=EVENTS.findIndex(e=>e.loop===sec.b+1); const b=bi<0?tot:evTime(bi);
+  return `<div title="${sec.name}" style="flex:${b-a};background:${sec.col}" data-t="${a}"></div>` }).join('');
+  const first=evTime(0); $('bands').insertAdjacentHTML('afterbegin',`<div style="flex:${first};background:#333"></div>`);
+  $('bands').onclick=e=>{const d=e.target.closest('[data-t]');if(d)seekSong(+d.dataset.t-0.2)} }
+function renderLib(){ const groups=[['song','Song chords (capo 1)'],['easy','Easy versions (capo 1)'],['power','Power chords — riff, no capo'],['real','Real‑key barre chords, no capo (advanced)']];
+  $('lib').innerHTML=groups.map(([g,t])=>`<div class="libgroup">${t}</div><div class="lib">`+Object.entries(CHORDS).filter(([k,c])=>c.group===g).map(([k,c])=>
+    `<div class="chord" data-ch="${k}" tabindex="0"><div class="nm">${c.name}</div><div class="sub">${c.sounds}</div>${diagram(k)}${c.note?`<div class="sub">${c.note}</div>`:''}</div>`).join('')+'</div>').join('');
+  $('lib').onclick=e=>{ const d=e.target.closest('[data-ch]'); if(!d) return; strum(d.dataset.ch); d.classList.add('play'); setTimeout(()=>d.classList.remove('play'),500) };
+  $('lib').onkeydown=e=>{ if(e.key==='Enter'){const d=e.target.closest('[data-ch]'); if(d) strum(d.dataset.ch)} } }
+function renderStrums(){ $('strums').innerHTML=PATTERNS.map(p=>`<div class="pat ${p.id===S.pattern?'sel':''}" data-p="${p.id}"><b>${p.name}</b> <span class="small mut">${p.desc}</span>
+  <div class="arrows">${p.arr.map(a=>`<span class="${a?'':'x'}">${a||'·'}</span>`).join('')}</div><div class="cnt">${['1','&','2','&','3','&','4','&'].map(x=>`<span>${x}</span>`).join('')}</div></div>`).join('');
+  $('strums').onclick=e=>{ const d=e.target.closest('[data-p]'); if(!d) return; S.pattern=d.dataset.p; persist(); renderStrums(); renderBeats(); $('patName').textContent=PATTERNS.find(p=>p.id===S.pattern).name.split(' — ')[0];
+    const p=PATTERNS.find(p=>p.id===S.pattern); ensureCtx(); const t=ctx.currentTime+0.05; p.arr.forEach((a,i)=>{ if(a) strum('C',a==='↑'?'up':'down',t+i*0.24,i%2?0.5:0.8,true) }) } }
+function renderBeats(){ const p=PATTERNS.find(p=>p.id===S.pattern); $('beats').innerHTML=p.arr.map((a,i)=>`<div class="beat ${a?'':'rest'}" id="b8_${i}">${a||'·'}<i>${['1','&','2','&','3','&','4','&'][i]}</i></div>`).join('') }
+
+/* ================= LIVE UPDATE ================= */
+let lastCellOn=-1,lastLine=-1,lastScroll=0;
+function curEventIdx(t){ // last event whose time <= t
+  let r=-1; for(let i=0;i<EVENTS.length;i++){ if(evTime(i)<=t+0.02) r=i; else break } return r }
+function renderNow(force){ const t=songTime(); const i=curEventIdx(t); const b=songBeat();
+  if(i!==S.curEv||force){ S.curEv=i;
+    const cur=i>=0?EVENTS[i]:null, nx=EVENTS[i+1]||null;
+    const curKey=cur?cur.ch:null;
+    $('nowName').textContent=cur?chName(cur.ch):'—'; $('nowName').style.color=cur?`var(--${cur.ch==='NC'?'nc':cur.ch.toLowerCase()})`:'';
+    $('nowSounds').textContent=cur?(cur.ch==='NC'?'stop — mute strings':'sounds '+CHORDS[cur.ch].sounds):'get ready';
+    $('nowDia').innerHTML=cur&&cur.ch!=='NC'?diagram(cur.ch):(cur?'':diagram('C'));
+    if(!cur){ $('nowName').textContent='–'; $('nowName').style.color='var(--mut)'; $('nowSounds').textContent='get ready · first chord is C'; $('nowDia').innerHTML=''; }
+    const nk=cur?nx:EVENTS[0];
+    $('nextName').textContent=nk?chName(nk.ch):'end'; $('nextName').style.color=nk?`var(--${nk.ch==='NC'?'nc':nk.ch.toLowerCase()})`:'';
+    $('nextSounds').textContent=nk&&nk.ch!=='NC'?'sounds '+CHORDS[nk.ch].sounds:(nk?'stop':'');
+    $('nextDia').innerHTML=nk&&nk.ch!=='NC'?diagram(nk.ch):'';
+    const loop=cur?cur.loop:0; const sec=SECTIONS.find(s=>loop>=s.a&&loop<=s.b);
+    $('secName').textContent=cur?sec.name:'Intro (get ready)'; $('secNote').textContent=`loop ${loop+1}/36`+(sec.note?' · '+sec.note:'');
+    $('cue').textContent=CUES[loop]||'';
+    if(lastCellOn>=0){const c=$('cell'+lastCellOn);if(c)c.classList.remove('on')}
+    document.querySelectorAll('.cell.done').forEach(c=>c.classList.remove('done'));
+    if(i>=0){ const c=$('cell'+i); if(c){c.classList.add('on'); lastCellOn=i} }
+    if(loop!==lastLine||force){ if(lastLine>=0){const l=$('line'+lastLine);if(l)l.classList.remove('cur')} const l=$('line'+loop); if(l){ l.classList.add('cur');
+        if(S.playing && Date.now()-lastScroll>400){ lastScroll=Date.now(); const r=l.getBoundingClientRect(); const narrow=innerWidth<=900;
+          const target=narrow? innerHeight*0.55 : innerHeight*0.38; if(r.top<target-60||r.top>target+120) window.scrollBy({top:r.top-target,behavior:'smooth'}) } } lastLine=loop }
+  }
+  // countdown in beats to next change
+  const nxI=i+1; if(nxI<EVENTS.length){ const nb=(S.custom[nxI]!=null&&S.src!=='band')?timeBeat(S.custom[nxI]):EVENTS[nxI].b; const left=Math.ceil(nb-b-0.001); $('count').textContent=(left>0&&left<=4)?left:'' } else $('count').textContent='';
+  // eighth highlight
+  const e8=Math.floor(b*2); const slot=((e8%8)+8)%8;
+  if(e8!==S.lastEighth){ document.querySelectorAll('.beat.hit').forEach(x=>x.classList.remove('hit')); if(b>=-4){const el=$('b8_'+slot); if(el) el.classList.add('hit')}
+    // click track for file / yt modes
+    if(S.src!=='band'&&S.playing&&document.getElementById('click').checked&&e8%2===0&&e8-S.lastEighth>=1&&e8-S.lastEighth<=2&&b>=0) clickAt(ctx?ctx.currentTime+0.005:0,(e8/2)%4===0);
+    S.lastEighth=e8 }
+  const st=S.src==='band'?t:srcTime(); $('time').textContent=fmt(st)+' / '+fmt(srcDur());
+  if(!seeking) $('seek').value=st;
+}
+let seeking=false; const seek=$('seek');
+seek.addEventListener('input',()=>{seeking=true; $('time').textContent=fmt(+seek.value)+' / '+fmt(srcDur())});
+seek.addEventListener('change',()=>{ const v=+seek.value; if(S.src==='band') bandSeekBeat(timeBeat(v)); else seekTo(v); seeking=false; renderNow(true) });
+function updateSeekMax(){ seek.max=srcDur() }
+function loop(){ if(S.src==='band') bandScheduler();
+  // A-B loop for file / yt
+  if(S.src!=='band'&&S.playing&&S.A!=null&&S.B!=null){ const st=songTime(); if(st>=S.B){ seekSong(S.A) } }
+  if(S.src==='band'&&S.band.running&&bandBeat()>=TOTAL_BEATS+0.5){ bandStop(); S.band.beat0=0 }
+  renderNow(false); requestAnimationFrame(loop) }
+
+/* ================= CONTROLS ================= */
+function switchSrc(src){ if(src===S.src) return; pause(); if(S.band.running) bandStop(); S.src=src;
+  ['file','yt','band'].forEach(s=>{$('tab-'+s).classList.toggle('on',s===src);$('pane-'+s).classList.toggle('show',s===src)});
+  if(src==='yt') loadYT(); if(src==='band'){ ensureCtx(); bandSeekBeat(0) }
+  $('speedNote').textContent=src==='band'?'use Tempo instead':'file & YouTube'; $('speed').disabled=src==='band';
+  setPlaying(false); updateSeekMax(); renderNow(true) }
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>switchSrc(b.dataset.src));
+$('play').onclick=()=>{ S.playing?pause():play() };
+$('back').onclick=()=>seekTo(srcTimeOrBand()-5); $('fwd').onclick=()=>seekTo(srcTimeOrBand()+5);
+function srcTimeOrBand(){ return S.src==='band'?songTime():srcTime() }
+$('speed').onchange=e=>{ S.speed=+e.target.value; audio.playbackRate=S.speed; if(yt&&yt.setPlaybackRate) try{yt.setPlaybackRate(S.speed)}catch(_){}; toast('Speed '+S.speed+'×') };
+const bpmEl=$('bpm'); bpmEl.value=S.bpm; $('bpmVal').textContent=S.bpm;
+bpmEl.oninput=()=>{ const b=bandBeat(); S.bpm=+bpmEl.value; $('bpmVal').textContent=S.bpm; if(S.band.running){S.band.beat0=b;S.band.t0=ctx.currentTime;} persist() };
+let taps=[]; $('tapTempo').onclick=()=>{ const n=performance.now(); taps=taps.filter(t=>n-t<2500); taps.push(n); if(taps.length>=3){ const d=(taps[taps.length-1]-taps[0])/(taps.length-1); const bpm=Math.round(Math.min(140,Math.max(40,60000/d))); bpmEl.value=bpm; bpmEl.oninput(); toast('Tempo '+bpm+' BPM') } else toast('Keep tapping…') };
+function setAB(a,b){ S.A=a; S.B=b; $('abInfo').textContent=(a!=null?'A '+fmt(a):'A –')+'  →  '+(b!=null?'B '+fmt(b):'B –'); }
+$('setA').onclick=()=>{ setAB(songTime(),S.B!=null&&S.B>songTime()?S.B:null); toast('Loop start set') };
+$('setB').onclick=()=>{ const t=songTime(); if(S.A==null||t<=S.A){toast('Set A first (before B)');return} setAB(S.A,t); toast('Looping A → B') };
+$('clrAB').onclick=()=>{ S.A=S.B=null; $('abInfo').textContent='Loop: off' };
+const offEl=$('offset'); function setOffset(v){ S.offset=Math.round(v*100)/100; offEl.value=S.offset; $('offVal').textContent=(S.offset>=0?'+':'')+S.offset.toFixed(2)+'s'; persist(); renderNow(true) }
+offEl.oninput=()=>setOffset(+offEl.value); $('offReset').onclick=()=>setOffset(0); setOffset(S.offset);
+let calibArmed=false; $('calib').onclick=()=>{ if(!S.playing){toast('Start the song, then tap this right on a chord change');return} doCalibrate() };
+function nearestEvent(t){ let best=-1,bd=1e9; for(let i=0;i<EVENTS.length;i++){const d=Math.abs(evTime(i)-t); if(d<bd){bd=d;best=i}} return best }
+function doCalibrate(){ const st=srcTime(); const t=st-S.offset; const i=nearestEvent(t); const err=t-evTime(i); setOffset(S.offset+err); toast(`Synced to ${chName(EVENTS[i].ch)} @ ${fmt(evTime(i))} (offset ${S.offset>=0?'+':''}${S.offset.toFixed(2)}s)`) }
+$('markBtn').onclick=()=>{ S.mark=!S.mark; $('markBtn').classList.toggle('on',S.mark); $('marking').classList.toggle('show',S.mark); if(S.mark&&S.src==='band') toast('Mark mode works with your record or YouTube'); updMarkInfo() };
+function updMarkInfo(){ $('markInfo').textContent=Object.keys(S.custom).length+' change(s) adjusted · saved in this browser' }
+function markTap(){ if(!S.playing){toast('Play the song first, then tap on each chord change');return} if(S.src==='band'){toast('Switch to My record or YouTube to mark timings');return} const t=songTime(); const i=nearestEvent(t); const delta=t-evTime(i);
+  if(Math.abs(delta)>1.2){ toast('Too far from any chord change — tap right on the change'); return }
+  if($('shiftLater').checked){ for(let j=i;j<EVENTS.length;j++) S.custom[j]=Math.round((evTime(j)+delta)*1000)/1000 } else S.custom[i]=Math.round(t*1000)/1000;
+  persist(); updMarkInfo(); renderChart(); renderBands(); renderNow(true); toast(`${chName(EVENTS[i].ch)} moved ${delta>=0?'+':''}${delta.toFixed(2)}s`) }
+$('tapBig').onclick=markTap;
+$('markReset').onclick=()=>{ if(!confirm('Reset all chord timings to the defaults?')) return; S.custom={}; persist(); updMarkInfo(); renderChart(); renderBands(); renderNow(true); toast('Timings reset') };
+document.addEventListener('keydown',e=>{ if(e.target.matches('input,select,textarea')&&e.target.type!=='range'&&e.target.type!=='checkbox') return;
+  if(e.code==='Space'){ e.preventDefault(); if(S.mark&&S.playing) markTap(); else (S.playing?pause():play()) }
+  else if(e.key==='ArrowLeft'){e.preventDefault();seekTo(srcTimeOrBand()-5)} else if(e.key==='ArrowRight'){e.preventDefault();seekTo(srcTimeOrBand()+5)}
+  else if(e.key==='a'||e.key==='A') $('setA').click(); else if(e.key==='b'||e.key==='B') $('setB').click();
+  else if((e.key==='m'||e.key==='M')&&S.mark) markTap() });
+let toastT; function toast(m){ const t=$('toast'); t.textContent=m; t.classList.add('show'); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove('show'),2200) }
+
+/* ================= INIT ================= */
+renderChart(); renderBands(); renderLib(); renderStrums(); renderBeats();
+$('patName').textContent=PATTERNS.find(p=>p.id===S.pattern).name.split(' — ')[0];
+updateSeekMax(); renderNow(true); requestAnimationFrame(loop);
+window.__app={S,EVENTS,evTime,songTime,switchSrc,bandSeekBeat,renderNow}; // for testing
+</script>
+</body>
+</html>
